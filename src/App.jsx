@@ -1,11 +1,12 @@
-
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
-    <>
-      Franca Web
-    </>
-  )
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
