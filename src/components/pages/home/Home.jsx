@@ -3,9 +3,9 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      franca
-    </div>
+   <>
+   <h1>Soy el Home</h1>
+   </>
   )
 }
 
