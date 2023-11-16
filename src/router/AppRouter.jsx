@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { menuRoutes } from "./routes";
 import Layout from "../components/layout/Layout";
