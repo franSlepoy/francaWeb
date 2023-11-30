@@ -8,12 +8,12 @@ import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBXSUJrN2paNVILBPu3JESNUn1bvUIZ9sQ",
-  authDomain: "francaweb-25330.firebaseapp.com",
-  projectId: "francaweb-25330",
-  storageBucket: "francaweb-25330.appspot.com",
-  messagingSenderId: "525911309661",
-  appId: "1:525911309661:web:240d0d7c99e6ed9485fcb4",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH,
+  projectId: import.meta.env.VITE_PROJECT,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MESSAGING,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

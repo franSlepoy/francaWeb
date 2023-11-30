@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,7 +9,7 @@ const LoginContainer = () => {
     setShowPassword(!showPassword);
   };
   console.log(showPassword);
-  const { handleSubmit, handleChange } = useFormik({
+  const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -16,6 +17,15 @@ const LoginContainer = () => {
     onSubmit: (data) => {
       console.log("se envio el formulario", data);
     },
+    validateOnChange: false,
+    validationSchema: Yup.object({
+      email: Yup.string("Deben ser caracteres")
+        .email("no corresponde con un email valido")
+        .required("Este campo es obligatorio"),
+      password: Yup.string("Deben ser caracteres").required(
+        "Este campo es obligatorio"
+      ),
+    }),
   });
   return (
     <Login
@@ -23,6 +33,7 @@ const LoginContainer = () => {
       handleShow={handleShow}
       handleSubmit={handleSubmit}
       handleChange={handleChange}
+      errors={errors}
     />
   );
 };

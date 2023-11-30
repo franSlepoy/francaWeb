@@ -14,10 +14,20 @@ const NavBar = () => {
           {menu.map((item) => {
             return (
               <Link key={item.id} sx={{ flexGrow: 1 }} to={item.path}>
-                <Typography sx={{ml:3, mt:"10px"}} >{item.title}</Typography>
+                <Typography sx={{ ml: 3, mt: "10px" }}>{item.title}</Typography>
               </Link>
             );
           })}
+          <Box mt={1} ml={15} display={"flex"}>
+          <Link to={"/login"}>
+            <Typography >Login</Typography>
+          </Link>
+          <Link>
+            <Typography ml={3}>register</Typography>
+          </Link>
+
+          </Box>
+         
         </Box>
       </Box>
     </>

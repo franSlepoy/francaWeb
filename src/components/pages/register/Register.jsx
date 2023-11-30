@@ -1,5 +1,20 @@
-const Register = () => {
-  return <h1>Register</h1>;
-};
+import { Box, TextField } from "@mui/material"
 
-export default Register;
+
+const Register = () => {
+  return (
+    <>
+      <Box>
+        <form>
+          <TextField label="email"/>
+          
+        </form>
+
+      </Box>
+
+    </>
+  )
+}
+
+export default Register
+
