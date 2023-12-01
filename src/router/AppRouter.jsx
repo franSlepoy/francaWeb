@@ -3,7 +3,6 @@ import { menuRoutes } from "./routes";
 import Layout from "../components/layout/Layout";
 import LoginContainer from "../components/pages/login/LoginContainer";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
-import Dashboard from "../components/pages/dashboard/Dashboard";
 import DashboardContainer from "../components/pages/dashboard/DashboardContainer";
 import ProtectedRoutes from "./ProtectedRoutes";
 

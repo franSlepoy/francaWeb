@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { login } from "../../../FirebaseConfig";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,8 +15,11 @@ const LoginContainer = () => {
       email: "",
       password: "",
     },
-    onSubmit: (data) => {
-      console.log("se envio el formulario", data);
+    onSubmit: async (data) => {
+      let result = await login(data);
+      console.log(result);
+
+      
     },
     validateOnChange: false,
     validationSchema: Yup.object({
