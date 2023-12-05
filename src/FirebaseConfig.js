@@ -38,10 +38,12 @@ export const loginWithGoogle = () => {};
 
 export const register = async ({ email, password }) => {
   try {
-    let res = await createUserWithEmailAndPassword(auth, email, password);
-    return res;
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    console.log("Registro exitoso:", res.user);
+    return res.user;
   } catch (error) {
-    console.log(error);
+    console.error("Error al registrar:", error.message);
+    throw error; // Puedes manejar el error de otra manera según tus necesidades
   }
 };
 

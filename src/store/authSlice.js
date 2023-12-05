@@ -10,11 +10,13 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: ()=> {}
+    loginRedux: (state, action)=> {
+      console.log("llego al reducer", action.payload)
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {login} = authSlice.actions;
+export const {loginRedux} = authSlice.actions;
 
 export default authSlice.reducer;

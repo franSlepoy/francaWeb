@@ -3,6 +3,8 @@ import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { login } from "../../../FirebaseConfig";
+import { loginRedux } from "../../../store/authSlice";
+import { useDispatch } from "react-redux";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,6 +12,9 @@ const LoginContainer = () => {
     setShowPassword(!showPassword);
   };
   console.log(showPassword);
+
+  const dispatch = useDispatch();
+
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       email: "",
@@ -17,9 +22,7 @@ const LoginContainer = () => {
     },
     onSubmit: async (data) => {
       let result = await login(data);
-      console.log(result);
-
-      
+      dispatch(loginRedux(result.user));
     },
     validateOnChange: false,
     validationSchema: Yup.object({
