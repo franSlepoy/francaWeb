@@ -2,9 +2,10 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { login } from "../../../FirebaseConfig";
+import { login, loginWithGoogle } from "../../../FirebaseConfig";
 import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { Button } from "@mui/material";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +23,7 @@ const LoginContainer = () => {
     },
     onSubmit: async (data) => {
       let result = await login(data);
-      console.log("aca esta el usuario", result)
+      console.log("aca esta el usuario", result);
       dispatch(loginRedux(result.user));
     },
     validateOnChange: false,
@@ -35,14 +36,31 @@ const LoginContainer = () => {
       ),
     }),
   });
+
+  const igresarConGoogle = async () => {
+    let res = await loginWithGoogle();
+    dispatch(loginRedux(res.user));
+    
+  };
   return (
-    <Login
-      showPassword={showPassword}
-      handleShow={handleShow}
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      errors={errors}
-    />
+    <>
+      <Login
+        showPassword={showPassword}
+        handleShow={handleShow}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        errors={errors}
+      />
+
+      <Button
+        sx={{ m: 3, width: "300px" }}
+        variant="contained"
+        onClick={igresarConGoogle}
+      >
+        
+        Login con Google
+      </Button>
+    </>
   );
 };
 

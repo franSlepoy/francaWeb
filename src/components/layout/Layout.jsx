@@ -5,7 +5,7 @@ import NavBarContainer from "./navBar/NavBarContainer";
 const Layout = () => {
   return (
     <>
-      <div style={{border:"peru solid",height:"60px"}}>
+      <div>
         <NavBarContainer />
       </div>
 

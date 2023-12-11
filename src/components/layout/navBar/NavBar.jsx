@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      <Box display={"flex"} justifyContent={"space-around"}>
-        <Box>
-          <h1>NavBar</h1>
+
+      <Box>
+        <Box width={"100%"}>
+          <Typography sx={{color: "#FFF6EE", bgcolor:"#006F6F", fontSize:"20px", fontStyle:"italic", fontWeight:"400", lineHeight:"60px", textAlign:"center"}}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet.
+          </Typography>
+        </Box>
+        <Box textAlign={"center"} sx={{mt:"42px", mb:"42px"}}>
+          <img src="public/imagenes/Group.svg" alt="" />
         </Box>
 
-        <Box display={"flex"}>
+        <Box display={"flex"} justifyContent={"space-around"}>
           {menu.map((item) => {
             return (
               <Link key={item.id} sx={{ flexGrow: 1 }} to={item.path}>
@@ -18,7 +24,10 @@ const NavBar = () => {
               </Link>
             );
           })}
-          <Box mt={1} ml={15} display={"flex"}>
+          
+          
+        </Box>
+        <Box mt={1} ml={15} display={"flex"}>
             <Link to={"/login"}>
               <Typography>Login</Typography>
             </Link>
@@ -26,8 +35,6 @@ const NavBar = () => {
               <Typography ml={3}>register</Typography>
             </Link>
           </Box>
-          
-        </Box>
         
       </Box>
     </>
