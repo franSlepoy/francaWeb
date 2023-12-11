@@ -19,16 +19,16 @@ const NavBar = () => {
             );
           })}
           <Box mt={1} ml={15} display={"flex"}>
-          <Link to={"/login"}>
-            <Typography >Login</Typography>
-          </Link>
-          <Link>
-            <Typography ml={3}>register</Typography>
-          </Link>
-
+            <Link to={"/login"}>
+              <Typography>Login</Typography>
+            </Link>
+            <Link to={"/register"}>
+              <Typography ml={3}>register</Typography>
+            </Link>
           </Box>
-         
+          
         </Box>
+        
       </Box>
     </>
   );

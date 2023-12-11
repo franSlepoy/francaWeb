@@ -22,6 +22,7 @@ const LoginContainer = () => {
     },
     onSubmit: async (data) => {
       let result = await login(data);
+      console.log("aca esta el usuario", result)
       dispatch(loginRedux(result.user));
     },
     validateOnChange: false,

@@ -4,7 +4,7 @@ const Dashboard = () => {
   return (
     <div>
       <Typography variant="h1" textAlign={"center"}>
-        PANEL DE ADMINISTRADOR
+        panel de administrador
       </Typography>
     </div>
   );
