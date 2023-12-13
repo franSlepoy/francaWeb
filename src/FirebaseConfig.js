@@ -25,7 +25,7 @@ const auth = getAuth(app);
 // LOS SERVICIOS
 
 // Login
-export const login = async ({ email, password }) => {
+export const onSignInFirebase = async ({ email, password }) => {
   try {
     let res = await signInWithEmailAndPassword(auth, email, password);
     return res;
@@ -58,11 +58,4 @@ export const register = async ({ email, password }) => {
   }
 };
 
-export const onSigIn = async ({ email, password }) => {
-  try {
-    const res = await signInWithEmailAndPassword(auth, email, password);
-    console.log(res);
-  } catch (error) {
-    console.log(error);
-  }
-};
+

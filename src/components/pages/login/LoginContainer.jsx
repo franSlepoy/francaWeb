@@ -2,17 +2,15 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { login, loginWithGoogle } from "../../../FirebaseConfig";
-import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
 import { Button } from "@mui/material";
+import { login, loginGoogle } from "../../../store/authThunk";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
-  console.log(showPassword);
 
   const dispatch = useDispatch();
 
@@ -21,11 +19,16 @@ const LoginContainer = () => {
       email: "",
       password: "",
     },
-    onSubmit: async (data) => {
+    /* onSubmit: async (data) => {
       let result = await login(data);
       console.log("aca esta el usuario", result);
       dispatch(loginRedux(result.user));
+    },  */
+
+    onSubmit: (data) => {
+      dispatch(login(data));
     },
+
     validateOnChange: false,
     validationSchema: Yup.object({
       email: Yup.string("Deben ser caracteres")
@@ -37,11 +40,11 @@ const LoginContainer = () => {
     }),
   });
 
+  /*   //funcion de redux sin Thunks
   const igresarConGoogle = async () => {
     let res = await loginWithGoogle();
     dispatch(loginRedux(res.user));
-    
-  };
+  }; */
   return (
     <>
       <Login
@@ -55,10 +58,9 @@ const LoginContainer = () => {
       <Button
         sx={{ m: 3, width: "300px" }}
         variant="contained"
-        onClick={igresarConGoogle}
+        onClick={() => dispatch(loginGoogle())}
       >
-        
-        Login con Google
+        Ingresar con Google
       </Button>
     </>
   );

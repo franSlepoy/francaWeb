@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { cartSlice } from './cartSlice'
 import { authSlice } from './authSlice'
 
@@ -9,9 +9,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: ['auth/loginRedux'], // Ignora esta acción específica si es no serializable
-      },
+      serializableCheck: false
     }),
 });
 
