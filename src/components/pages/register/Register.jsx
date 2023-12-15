@@ -11,11 +11,26 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-const Register = ({ showPassword, handleShow, handleSubmit, handleChange, errors }) => {
+const Register = ({
+  showPassword,
+  handleShow,
+  handleSubmit,
+  handleChange,
+  errors,
+}) => {
   return (
     <Box display={"flex"}>
       <form onSubmit={handleSubmit}>
         <Box display={"flex"} flexDirection={"column"}>
+          <TextField
+            name="displayName"
+            onChange={handleChange}
+            sx={{ m: 3 }}
+            label="Full Name"
+            variant="outlined"
+            error={errors.displayName ? true : false}
+            helperText={errors.displayName}
+          />
           <TextField
             name="email"
             onChange={handleChange}
@@ -78,9 +93,15 @@ const Register = ({ showPassword, handleShow, handleSubmit, handleChange, errors
               label="Confirm Password"
             />
           </FormControl>
-          <FormHelperText sx={{ ml: 3 }}>{errors.confirmPassword}</FormHelperText>
+          <FormHelperText sx={{ ml: 3 }}>
+            {errors.confirmPassword}
+          </FormHelperText>
 
-          <Button type="submit" sx={{ m: 3, width: "300px" }} variant="contained">
+          <Button
+            type="submit"
+            sx={{ m: 3, width: "300px" }}
+            variant="contained"
+          >
             Register
           </Button>
         </Box>
@@ -90,4 +111,3 @@ const Register = ({ showPassword, handleShow, handleSubmit, handleChange, errors
 };
 
 export default Register;
-

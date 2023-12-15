@@ -3,6 +3,8 @@ import Register from "./Register";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { register } from "../../../FirebaseConfig";
+import { db } from "../../../FirebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 
 const RegisterContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,13 +18,21 @@ const RegisterContainer = () => {
       email: "",
       password: "",
       confirmPassword: "",
+      displayName: "",
     },
     onSubmit: async (data) => {
-      // Agregamos la lógica para el registro con Firebase
       try {
         // Llamamos a la función de registro de Firebase
-        const user = await register({ email: data.email, password: data.password });
-        console.log("Registro exitoso:", user);
+        const userCredential = await register({ email: data.email, password: data.password });
+  
+        // Creamos un nuevo documento en la colección 'users' en Firestore
+        await addDoc(collection(db, "users"), {
+          displayName: data.displayName, // Utilizamos el valor del formulario
+          email: data.email,
+          rol: "cliente",
+        });
+  
+        console.log("Registro exitoso:", userCredential.user);
         // Puedes agregar lógica adicional aquí, como redireccionar al usuario a una página de bienvenida
       } catch (error) {
         console.error("Error al registrar:", error.message);
