@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoutes = () => {
-  const { isLogged, accessToken } = useSelector((state) => state.auth);
+  const { isLogged, accessToken, user } = useSelector((state) => state.auth);
 
-  return isLogged && accessToken ? <Outlet /> : <Navigate to="/login" />;
+  return isLogged && accessToken && user.rol == "admin" ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

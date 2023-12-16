@@ -21,7 +21,8 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      console.log("se hizo el login", action.payload);
+      console.log("se hizo el login",  action.payload);
+      state.user = action.payload.userData;
       state.accessToken = action.payload.accessToken;
       state.isLogged = true;
       state.isLoading = false;
@@ -36,6 +37,7 @@ export const authSlice = createSlice({
     });
      builder.addCase(loginGoogle.fulfilled, (state, action) => {
       console.log("se hizo el login");
+      state.user = action.payload.userData;
       state.accessToken = action.payload.accessToken;
       state.isLogged = true;
       state.isLoading = false;
