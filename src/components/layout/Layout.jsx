@@ -9,11 +9,11 @@ const Layout = () => {
         <NavBarContainer />
       </div>
 
-      <div style={{border:"peru solid",minHeight:"calc(100vh - 60px - 200px)"}}>
+      <div style={{minHeight:"calc(100vh - 60px - 200px)"}}>
         <Outlet />
       </div>
 
-      <div style={{border:"peru solid",height:"200px"}}>
+      <div>
         <FooterContainer />
       </div>
     </>
