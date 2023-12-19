@@ -8,6 +8,7 @@ const Footer = () => {
         sx={{
           height: "338px",
           bgcolor: "#14332F",
+          mt:"200px"
         }}
       >
         <Box width={"80%"} margin={"auto"} display={"flex"}>
@@ -37,7 +38,7 @@ const Footer = () => {
                   color: "inherit",
                   textDecoration: "none",
                 }}
-                to={"/"}
+                to={"/asesoramiento"}
               >
                 <Typography
                   sx={{
@@ -59,7 +60,7 @@ const Footer = () => {
                   color: "inherit",
                   textDecoration: "none",
                 }}
-                to={"/"}
+                to={"/quienesSomos"}
               >
                 <Typography
                   sx={{
@@ -158,7 +159,7 @@ const Footer = () => {
                   fontFamily: "Lato",
                 }}
               >
-                Montevideo, Uruguay 
+                Montevideo, Uruguay.
               </Typography>
             </Box>
           </Box>

@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         </Box>
         
         <Box sx={{ width: "80%", margin: "auto", mb:"20px", mt:"155px" }}>
+        <Link style={{ textDecoration: "none" }}  to={"/quienesSomos"}>
         <Button
           sx={{
             fontFamily: "Lora",
@@ -42,16 +44,17 @@ const Home = () => {
             lineHeight: "20px",
             letterSpacing: "1.5px",
             padding:"10px",
+          
           }}
         >
-          CONOCENOS
+         CONOCENOS
         </Button>
+        </Link>
+       
         </Box>
        
       </Box>
-      <Box sx={{width:"100%", height:"150px", bgcolor:"#FFF6EE"}} >
-
-      </Box>
+      
     </>
   );
 };

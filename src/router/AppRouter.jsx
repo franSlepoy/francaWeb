@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { menuRoutes } from "./routes";
 import Layout from "../components/layout/Layout";
-import LoginContainer from "../components/pages/login/LoginContainer";
-import RegisterContainer from "../components/pages/register/RegisterContainer";
 import DashboardContainer from "../components/pages/dashboard/DashboardContainer";
 import ProtectedRoutes from "./ProtectedRoutes";
 
@@ -15,8 +13,7 @@ const AppRouter = () => {
         ))}
       </Route>
 
-      <Route path="/login" element={<LoginContainer />} />
-      <Route path="/register" element={<RegisterContainer />} />
+      
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard" element={<DashboardContainer />} />
       </Route>

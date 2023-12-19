@@ -103,6 +103,7 @@ const NavBar = () => {
             );
           })}
         </Box>
+        <Divider sx={{ width: "100%" }} />
       </Box>
     </>
   );
