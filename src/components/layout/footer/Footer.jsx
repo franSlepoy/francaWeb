@@ -8,7 +8,7 @@ const Footer = () => {
         sx={{
           height: "338px",
           bgcolor: "#14332F",
-          mt:"200px"
+          mt: "200px",
         }}
       >
         <Box width={"80%"} margin={"auto"} display={"flex"}>
@@ -16,12 +16,17 @@ const Footer = () => {
             display={"flex"}
             justifyContent={"space-between"}
             width={"50%"}
-            sx={{ color: "#FFF", fontFamily: "Lato" }}
+            sx={{
+              color: "#FFF",
+              fontFamily: "Lato",
+              
+            }}
             mt={"55px"}
           >
             <Box>
               <Typography
                 sx={{
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
@@ -42,12 +47,15 @@ const Footer = () => {
               >
                 <Typography
                   sx={{
-                    mt:1,
+                    mt: 1,
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "20px",
                     letterSpacing: "1.5px",
                     fontFamily: "Lato",
+                    "&:hover": {
+                      color: "#0FA24A", // Cambia el color al hacer hover
+                    },
                   }}
                 >
                   Asesoramiento
@@ -64,12 +72,15 @@ const Footer = () => {
               >
                 <Typography
                   sx={{
-                    mt:1,
+                    mt: 1,
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "20px",
                     letterSpacing: "1.5px",
                     fontFamily: "Lato",
+                    "&:hover": {
+                      color: "#0FA24A", // Cambia el color al hacer hover
+                    },
                   }}
                 >
                   Quienes somos
@@ -79,7 +90,7 @@ const Footer = () => {
             <Box>
               <Typography
                 sx={{
-                  mt:1,
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
@@ -91,24 +102,30 @@ const Footer = () => {
               </Typography>
               <Typography
                 sx={{
-                  mt:1,
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
                   letterSpacing: "1.5px",
                   fontFamily: "Lato",
+                  "&:hover": {
+                    color: "#0FA24A", // Cambia el color al hacer hover
+                  },
                 }}
               >
                 Cómo comprar
               </Typography>
               <Typography
                 sx={{
-                  mt:1,
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
                   letterSpacing: "1.5px",
                   fontFamily: "Lato",
+                  "&:hover": {
+                    color: "#0FA24A", // Cambia el color al hacer hover
+                  },
                 }}
               >
                 Envíos
@@ -117,41 +134,45 @@ const Footer = () => {
             <Box>
               <Typography
                 sx={{
-                  mt:1,
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
                   letterSpacing: "1.5px",
                   fontFamily: "Lato",
+                  
                 }}
               >
                 CONTACTO
               </Typography>
-              <Link
+              <a
+                href="mailto:holafrancauy@gmail.com"
                 style={{
                   textTransform: "none",
                   color: "inherit",
                   textDecoration: "none",
                 }}
-                to={"/"}
               >
                 <Typography
                   sx={{
-                    mt:1,
+                    mt: 1,
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "20px",
                     letterSpacing: "1.5px",
                     fontFamily: "Lato",
+                    "&:hover": {
+                      color: "#0FA24A", // Cambia el color al hacer hover
+                    },
                   }}
                 >
                   holafrancauy@gmail.com
                 </Typography>
-              </Link>
+              </a>
 
               <Typography
                 sx={{
-                  mt:1,
+                  mt: 1,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",

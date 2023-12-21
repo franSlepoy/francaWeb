@@ -1,9 +1,14 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, IconButton, InputBase, Typography } from "@mui/material";
 import { menu } from "../../../router/nevigation";
 import { Link } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 
 const NavBar = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const handleSearchClick = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
   return (
     <>
       <Box width={"100%"}>
@@ -16,10 +21,10 @@ const NavBar = () => {
             fontStyle: "italic",
             fontWeight: "400",
             lineHeight: "60px",
-            margin:"auto",
+            margin: "auto",
             height: "43px",
             display: "flex",
-            pl:2,
+            pl: 2,
             alignItems: "center", // Centra verticalmente el contenido
           }}
         >
@@ -41,7 +46,21 @@ const NavBar = () => {
           </Box>
 
           <Box flex="1" mt={"48px"} display={"flex"} justifyContent={"end"}>
-            <SearchIcon sx={{ mt: 2 }} />
+          <Box mt={-3} display="flex" alignItems="center">
+              <IconButton onClick={handleSearchClick}>
+                <img src="public/imagenes/lupa.png" alt="" />
+              </IconButton>
+
+              {isSearchVisible && (
+                <Box>
+                  <InputBase
+                    placeholder="Buscar productos..."
+                    // Aquí puedes agregar cualquier lógica adicional del buscador
+                  />
+                </Box>
+              )}
+            </Box>
+
             <Link style={{ textDecoration: "none" }} to={"/register"}>
               <Typography
                 ml={3}
@@ -73,6 +92,8 @@ const NavBar = () => {
             <Box mt={2} ml={3}>
               <img src="public/imagenes/Vector.svg" alt="" />
             </Box>
+
+            
           </Box>
         </Box>
 

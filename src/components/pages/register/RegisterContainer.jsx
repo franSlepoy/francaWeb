@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { register } from "../../../FirebaseConfig";
 import { db } from "../../../FirebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+
 
 const RegisterContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,6 +14,7 @@ const RegisterContainer = () => {
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
@@ -33,7 +36,8 @@ const RegisterContainer = () => {
         });
   
         console.log("Registro exitoso:", userCredential.user);
-        // Puedes agregar lógica adicional aquí, como redireccionar al usuario a una página de bienvenida
+        // Actualizamos el estado para indicar que el registro fue exitoso
+        setRegistrationSuccess(true);
       } catch (error) {
         console.error("Error al registrar:", error.message);
       }
@@ -51,6 +55,7 @@ const RegisterContainer = () => {
         .oneOf([Yup.ref("password"), null], "Las contraseñas no coinciden"),
     }),
   });
+  const dispatch = useDispatch();
 
   return (
     <Register
@@ -59,6 +64,9 @@ const RegisterContainer = () => {
       handleSubmit={handleSubmit}
       handleChange={handleChange}
       errors={errors}
+      registrationSuccess={registrationSuccess}
+      dispatch={dispatch}
+
     />
   );
 };

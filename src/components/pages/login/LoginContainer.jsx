@@ -1,13 +1,18 @@
-import { useState } from "react";
+
+import  { useState } from "react";
 import Login from "./Login";
+import LoginExitoso from "./LoginExitoso";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { Button } from "@mui/material";
-import { login, loginGoogle } from "../../../store/authThunk";
+
+import { login } from "../../../store/authThunk";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [userData, setUserData] = useState(null); // Estado para almacenar los datos del usuario
+
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
@@ -19,16 +24,15 @@ const LoginContainer = () => {
       email: "",
       password: "",
     },
-    /* onSubmit: async (data) => {
-      let result = await login(data);
-      console.log("aca esta el usuario", result);
-      dispatch(loginRedux(result.user));
-    },  */
-
-    onSubmit: (data) => {
-      dispatch(login(data));
+    onSubmit: async (data) => {
+      try {
+        const result = await dispatch(login(data));
+        setUserData(result.userData); // Almacena los datos del usuario
+        setLoginSuccess(true);
+      } catch (error) {
+        // Manejar errores, si es necesario
+      }
     },
-
     validateOnChange: false,
     validationSchema: Yup.object({
       email: Yup.string("Deben ser caracteres")
@@ -40,28 +44,20 @@ const LoginContainer = () => {
     }),
   });
 
-  /*   //funcion de redux sin Thunks
-  const igresarConGoogle = async () => {
-    let res = await loginWithGoogle();
-    dispatch(loginRedux(res.user));
-  }; */
   return (
     <>
-      <Login
-        showPassword={showPassword}
-        handleShow={handleShow}
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        errors={errors}
-      />
-
-      <Button
-        sx={{ m: 3, width: "300px" }}
-        variant="contained"
-        onClick={() => dispatch(loginGoogle())}
-      >
-        Ingresar con Google
-      </Button>
+      {loginSuccess ? (
+        <LoginExitoso userData={userData} /> // Pasa los datos del usuario al componente LoginExitoso
+      ) : (
+        <Login
+          showPassword={showPassword}
+          handleShow={handleShow}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          errors={errors}
+          dispatch={dispatch}
+        />
+      )}
     </>
   );
 };
