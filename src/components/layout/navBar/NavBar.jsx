@@ -2,14 +2,16 @@ import { Box, Divider, IconButton, InputBase, Typography } from "@mui/material";
 import { menu } from "../../../router/nevigation";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import CustomModalContainer from "../../common/customModal/CustomModalContainer";
 
-const NavBar = () => {
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
+const NavBar = ({handleOpen, handleClose, open}) => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const handleSearchClick = () => {
     setIsSearchVisible(!isSearchVisible);
   };
+
   return (
     <>
       <Box width={"100%"}>
@@ -74,10 +76,19 @@ const NavBar = () => {
                 <img src="public/imagenes/resgistro.svg" alt="" />
               </Link>
             </Box>
-
-            <Box ml={"35px"}>
-              <img src="public/imagenes/Vector.svg" alt="" />
-            </Box>
+            <IconButton
+              style={{
+                backgroundColor: "transparent",
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+              disableTouchRipple
+              onClick={handleOpen}
+            >
+              <Box width={"25px"} height={"25px"} ml={"25px"} mt={"-62px"}>
+                <img src="public/imagenes/Vector.svg" alt="" />
+              </Box>
+            </IconButton>
+            <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Box>
 
@@ -130,7 +141,6 @@ const NavBar = () => {
                           fontWeight: "400",
                           lineHeight: "25px",
                           "&:hover": { fontWeight: "600" },
-                          
                         }}
                       >
                         {subcategory.title}
