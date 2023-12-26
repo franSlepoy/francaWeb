@@ -47,7 +47,7 @@ const Footer = () => {
               >
                 <Typography
                   sx={{
-                    mt: 1,
+                    mt: 2,
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "20px",
@@ -102,7 +102,7 @@ const Footer = () => {
               </Typography>
               <Typography
                 sx={{
-                  mt: 1,
+                  mt: 2,
                   fontSize: "15px",
                   fontWeight: "400",
                   lineHeight: "20px",
@@ -155,7 +155,7 @@ const Footer = () => {
               >
                 <Typography
                   sx={{
-                    mt: 1,
+                    mt: 2,
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "20px",

@@ -34,6 +34,7 @@ const Home = () => {
         <Link style={{ textDecoration: "none" }}  to={"/quienesSomos"}>
         <Button
           sx={{
+            width:"173px",
             fontFamily: "Lora",
             backgroundColor: "#FFF6EE",
             color: "#006F6F",
@@ -44,7 +45,10 @@ const Home = () => {
             lineHeight: "20px",
             letterSpacing: "1.5px",
             padding:"10px",
-          
+            gap:10,
+            alignItems:"center",
+            borderRadius:"50px",
+
           }}
         >
          CONOCENOS

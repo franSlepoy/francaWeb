@@ -1,16 +1,16 @@
-import { Box, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
 
-const LoginExitoso = ({ userData }) => {
+
+const LoginExitoso = () => {
     return (
       <Box width={"80%"} margin={"auto"} textAlign={"center"}>
-        {userData ? (
-          <Typography sx={{mt:10, color:"#0FA24A", fontFamily:"Lora", fontSize:"35px", fontWeight:"400", lineHeight:"45px"}} >Login exitoso. ¡Bienvenido, {userData.displayName}!</Typography>
+      
+          <Typography sx={{ mt:10, color:"#0FA24A", fontFamily:"Lora", fontSize:"35px", fontWeight:"400", lineHeight:"45px"}} >Inicio de sesión exitoso!</Typography>
           
-        ) : (
-          <Typography sx={{mt:10, color:"#0FA24A", fontFamily:"Lora", fontSize:"35px", fontWeight:"400", lineHeight:"45px"}} >Login exitoso. ¡Bienvenido!</Typography>
-        )}
-         <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
+     
+
+   
+        {/*  <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
         <Button
           variant="outlined"
           sx={{
@@ -32,7 +32,7 @@ const LoginExitoso = ({ userData }) => {
         >
           Dashboard
         </Button>
-      </Link>
+      </Link> */}
       </Box>
     );
   };

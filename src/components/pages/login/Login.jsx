@@ -46,7 +46,7 @@ const Login = ({
             p: 3,
           }}
         >
-          Registrate
+          Iniciar sesión
         </Typography>
         <form onSubmit={handleSubmit}>
   {googleLoginSuccess ? (
