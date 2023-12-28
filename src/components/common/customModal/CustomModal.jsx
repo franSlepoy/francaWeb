@@ -58,13 +58,9 @@ const CustomModal = ({ open, handleClose }) => {
               height={"25px"}
               sx={{ bgcolor: "green", borderRadius: "100%" }}
             >
-              <Typography
-                fontFamily={"Lato"}
-                textAlign={"center"}
-                color={"#fff"}
-              >
-                ✓
-              </Typography>
+              <Box ml={"5px"} mt={"4px"}>
+                <img src="/public/imagenes/check.svg" alt="" />
+              </Box>
             </Box>
             <Box>
               <Typography
@@ -97,7 +93,7 @@ const CustomModal = ({ open, handleClose }) => {
               },
             }}
           >
-            <Link style={{ color: "#172826" }} to={"/"}>
+            <Link style={{ color: "#172826" }} to={"/checkOut"}>
               <Typography
                 onClick={handleClose}
                 sx={{
@@ -164,6 +160,55 @@ const CustomModal = ({ open, handleClose }) => {
             >
               $16.280
             </Typography>
+          </Box>
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            sx={{
+              mt:"70%",
+             
+              fontFamily: "Lato",
+              fontSize: "18px",
+              fontWeight: "400",
+              lineHeight: "13px",
+              letterSpacing: "-0.36px",
+              color: "#172826",
+              textDecoration: "underline",
+              "&:hover": {
+                color: "#006F6F",
+              },
+            }}
+          >
+            <Link style={{ color: "#172826" }} to={"/checkOut"}>
+              <Typography
+                onClick={handleClose}
+                sx={{
+                  textDecoration: "underline",
+                  "&:hover": {
+                    color: "#006F6F",
+                    cursor: "pointer",
+                    fontFamily: "Lato",
+                  },
+                }}
+              >
+                Finalizar compra
+              </Typography>
+            </Link>
+
+            <Link style={{ color: "#172826" }} to={"/"}>
+              <Typography
+                onClick={handleClose}
+                sx={{
+                  textDecoration: "underline",
+                  "&:hover": {
+                    color: "#006F6F",
+                    fontFamily: "Lato",
+                  },
+                }}
+              >
+                Seguir comprando
+              </Typography>
+            </Link>
           </Box>
         </Box>
       </Box>

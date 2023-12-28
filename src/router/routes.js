@@ -1,4 +1,5 @@
 import Asesoramiento from "../components/pages/Asesoramiento/Asesoramiento";
+import CheckOut from "../components/pages/checkout/CheckOut";
 import HomeContainer from "../components/pages/home/HomeContainer";
 import LoginContainer from "../components/pages/login/LoginContainer";
 import ProductListContainer from "../components/pages/productList/ProductListContainer";
@@ -33,5 +34,9 @@ export const menuRoutes = [
     id: "QuienesSomos",
     path: "/QuienesSomos",
     Element: QuienesSomos ,
+  },{
+    id: "checkOut",
+    path: "/checkOut",
+    Element: CheckOut ,
   },
 ];
