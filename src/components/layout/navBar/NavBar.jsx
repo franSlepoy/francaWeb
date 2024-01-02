@@ -120,11 +120,14 @@ const NavBar = ({handleOpen, handleClose, open}) => {
                   sx={{
                     position: "absolute",
                     top: "100%",
-                    left: -4,
+                    left: -15,
                     width: "90%",
+                    
                     zIndex: 1,
                     backgroundColor: "#FFF6EE",
-                    padding: 1,
+                    pl:2,
+                    pr:2
+                    
                   }}
                 >
                   {item.subcategories.map((subcategory) => (

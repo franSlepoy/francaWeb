@@ -1,5 +1,6 @@
 import Asesoramiento from "../components/pages/Asesoramiento/Asesoramiento";
 import CheckOut from "../components/pages/checkout/CheckOut";
+import FormularioDeEnvio from "../components/pages/checkout/formularioDeEnvio/FormularioDeEnvio";
 import HomeContainer from "../components/pages/home/HomeContainer";
 import LoginContainer from "../components/pages/login/LoginContainer";
 import ProductListContainer from "../components/pages/productList/ProductListContainer";
@@ -38,5 +39,9 @@ export const menuRoutes = [
     id: "checkOut",
     path: "/checkOut",
     Element: CheckOut ,
+  },{
+    id: "formularioDeEnvio",
+    path: "/formularioDeEnvio",
+    Element: FormularioDeEnvio ,
   },
 ];

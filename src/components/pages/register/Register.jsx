@@ -14,6 +14,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { loginGoogle } from "../../../store/authThunk";
 import { Link } from "react-router-dom";
 import RegisterExitoso from "./RegistroExitoso";
+import ButtonFranca from "../../common/ButtonFranca";
 
 const Register = ({
   showPassword,
@@ -25,7 +26,7 @@ const Register = ({
   dispatch
 }) => {
   return (
-    <Box width={"38%"} m={"auto"}>
+    <Box width={"35%"} m={"auto"}>
        {registrationSuccess ? ( // Mostrar mensaje de éxito si el registro fue exitoso
         <RegisterExitoso userData={{ displayName: "Nuevo Usuario" }} />
       ) : (
@@ -38,7 +39,7 @@ const Register = ({
           fontWeight: "400",
           lineHeight: "45px",
           mt: "80px",
-          p: 3,
+          
         }}
       >
         Crea una cuenta
@@ -48,7 +49,7 @@ const Register = ({
           <TextField
             name="displayName"
             onChange={handleChange}
-            sx={{ m: 3 }}
+            sx={{ mt: 3 }}
             label="Nombre completo"
             variant="outlined"
             error={errors.displayName ? true : false}
@@ -57,14 +58,14 @@ const Register = ({
           <TextField
             name="email"
             onChange={handleChange}
-            sx={{ m: 3 }}
+            sx={{ mt: 3 }}
             label="Email"
             variant="outlined"
             error={errors.email ? true : false}
             helperText={errors.email}
           />
 
-          <FormControl sx={{ m: 3 }} variant="outlined">
+          <FormControl sx={{ mt: 3 }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">
               Contraseña
             </InputLabel>
@@ -89,9 +90,9 @@ const Register = ({
               label="Password"
             />
           </FormControl>
-          <FormHelperText sx={{ ml: 3 }}>{errors.password}</FormHelperText>
+          <FormHelperText >{errors.password}</FormHelperText>
 
-          <FormControl sx={{ m: 3 }} variant="outlined">
+          <FormControl sx={{ mt: 3 }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-confirm-password">
               Confirmar Contraseña
             </InputLabel>
@@ -116,38 +117,14 @@ const Register = ({
               label="Confirm Password"
             />
           </FormControl>
-          <FormHelperText sx={{ ml: 3 }}>
+          <FormHelperText >
             {errors.confirmPassword}
           </FormHelperText>
-          <Box>
-          <Button
-            type="submit"
-            sx={{
-              ml: 3,
-              mt: 4,
-              width: "45%",
-              p: "10px",
-              borderRadius: "50px",
-              bgcolor: "#006F6F",
-              color: "#FFF6EE",
-              fontFamily: "Lato",
-              fontSize: "15px",
-              fontWeight: "400",
-              lineHeight: "28px",
-              letterSpacing: "1.5px",
-              '&:hover': {
-                color:"#006F6F",
-                bgcolor: "#FFF6EE", // Cambia el color al hacer hover
-              },
-            }}
-            variant="contained"
-          >
-            Enviar
-          </Button>
+          <Box mt={3} display={"flex"} justifyContent={"space-between"}>
+          <ButtonFranca title={"Enviar"} type={"submit"} width={"45%"}/>
           <Button
                 sx={{
-                  mt: 3,
-                  ml: 2,
+                 
                   textAling: "center",
                   width: "45%",
                   p: "10px",
@@ -160,6 +137,9 @@ const Register = ({
                   lineHeight: "28px",
                   letterSpacing: "1.5px",
                   textTransform: "none",
+                  "&:hover": {
+                    bgcolor: "transparent", 
+                  },
                 }}
                 variant="text"
                 onClick={() => dispatch(loginGoogle())}
@@ -167,7 +147,7 @@ const Register = ({
                 Ingresar con Google
               </Button>
           </Box>
-          <Box display={"flex"} ml={3} mt={8}sx={{fontFamily:"Lato", fontSize:"18px", fontWeight:"400", lineHeight:"13px", letterSpacing:"-0.36px" }}>
+          <Box display={"flex"} mt={8}sx={{fontFamily:"Lato", fontSize:"18px", fontWeight:"400", lineHeight:"13px", letterSpacing:"-0.36px" }}>
             <Typography sx={{color:"rgba(0, 0, 0, 0.46)"}}>
             ¿Ya tenés cuenta? 
             </Typography>

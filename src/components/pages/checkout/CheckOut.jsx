@@ -1,5 +1,8 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import ButtonFranca from "../../common/ButtonFranca";
+import ResumenDelPedido from "./ResumenDelPedido";
+import { Link } from "react-router-dom";
 
 const CheckOut = ({ selectedValue, handleChange }) => {
   const numberOptions = Array.from({ length: 4 }, (_, index) => index + 1); // Crear un array de números del 1 al 10
@@ -266,133 +269,16 @@ const CheckOut = ({ selectedValue, handleChange }) => {
                   </Box>
                 </Box>
               </Box>
+              <Link to={"/"}>
               <Box mt={"78px"}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    padding: "17px 120px",
-                    borderRadius: "36px",
-                    bgcolor: " #006F6F",
-                    color: "#FFF",
-                    textAlign: "center",
-                    fontFamily: "Lato",
-                    fontSize: "15px",
-                    fontWeight: "400",
-                    lineHeight: "20px",
-                    letterSpacing: "1.5px",
-                  }}
-                >
-                  <Typography>SEGUIR COMPRANDO</Typography>
-                </Button>
+                <ButtonFranca title={"SEGUIR COMPRANDO"} />
               </Box>
+              </Link>
+             
             </Box>
           </Box>
         </Box>
-
-        <Box width={"100%"} mt={"80px"} ml={"10%"}>
-          <Typography
-            sx={{
-              color: "#172826",
-              fontFamily: "Lora",
-              fontSize: "35px",
-              fontWeight: "400",
-              lineHeight: "45px",
-            }}
-          >
-            Resumen del pedido
-          </Typography>
-          <Box display={"flex"} justifyContent={"space-between"} mt={"50px"}>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontWeight: "400",
-                lineHeight: "12px",
-              }}
-            >
-              importe
-            </Typography>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontWeight: "600",
-                lineHeight: "45px",
-              }}
-            >
-              $15.677
-            </Typography>
-          </Box>
-          <Box display={"flex"} justifyContent={"space-between"}>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: "400",
-                lineHeight: "12px",
-              }}
-            >
-              Gastos de envio
-            </Typography>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontWeight: "600",
-                lineHeight: "45px",
-              }}
-            >
-              $0
-            </Typography>
-          </Box>
-          <Box display={"flex"} justifyContent={"space-between"}>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontWeight: "400",
-                lineHeight: "12px",
-              }}
-            >
-              Total
-            </Typography>
-            <Typography
-              sx={{
-                color: "#172826",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontWeight: "600",
-                lineHeight: "45px",
-              }}
-            >
-              $15.677
-            </Typography>
-          </Box>
-          <Box mt={"78px"}>
-            <Button
-              variant="contained"
-              sx={{
-                padding: "17px 120px",
-                borderRadius: "36px",
-                bgcolor: " #006F6F",
-                color: "#FFF",
-                textAlign: "center",
-                fontFamily: "Lato",
-                fontSize: "15px",
-                fontWeight: "400",
-                lineHeight: "20px",
-                letterSpacing: "1.5px",
-              }}
-            >
-              <Typography>TRAMITAR PEDIDO</Typography>
-            </Button>
-          </Box>
-        </Box>
+        <ResumenDelPedido />
       </Box>
     </>
   );
