@@ -1,5 +1,4 @@
-
-import  { useState } from "react";
+import { useState } from "react";
 import Login from "./Login";
 import LoginExitoso from "./LoginExitoso";
 import { useFormik } from "formik";
@@ -19,7 +18,7 @@ const LoginContainer = () => {
 
   const dispatch = useDispatch();
 
-  const { handleSubmit, handleChange, errors } = useFormik({
+  const { handleSubmit, handleChange, errors, setErrors } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -27,10 +26,19 @@ const LoginContainer = () => {
     onSubmit: async (data) => {
       try {
         const result = await dispatch(login(data));
-        setUserData(result.userData); // Almacena los datos del usuario
-        setLoginSuccess(true);
+        console.log("result: ", result);
+        if (result.type === "login/rejected") {
+          //renderizar new error en formulario
+          setErrors({
+            email: "Este usuario no se encuentra en el sistema!",
+          });
+          return;
+        } else {
+          setUserData(result.userData); // Almacena los datos del usuario
+          setLoginSuccess(true);
+        }
       } catch (error) {
-        // Manejar errores, si es necesario
+        console.log("error del catch del dispatch login ", error);
       }
     },
     validateOnChange: false,
