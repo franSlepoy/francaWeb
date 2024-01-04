@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import CustomModalContainer from "../../common/customModal/CustomModalContainer";
 
-const NavBar = ({handleOpen, handleClose, open}) => {
+const NavBar = ({ handleOpen, handleClose, open }) => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -101,7 +101,7 @@ const NavBar = ({handleOpen, handleClose, open}) => {
               onMouseEnter={() => setHoveredCategory(item.id)}
               onMouseLeave={() => setHoveredCategory(null)}
             >
-              <Link style={{ textDecoration: "none" }} to={item.path}>
+              <Link style={{ textDecoration: "none" }} /* to={item.path} */>
                 <Typography
                   sx={{
                     fontFamily: "Lora",
@@ -122,19 +122,18 @@ const NavBar = ({handleOpen, handleClose, open}) => {
                     top: "100%",
                     left: -15,
                     width: "90%",
-                    
+
                     zIndex: 1,
                     backgroundColor: "#FFF6EE",
-                    pl:2,
-                    pr:2
-                    
+                    pl: 2,
+                    pr: 2,
                   }}
                 >
                   {item.subcategories.map((subcategory) => (
                     <Link
                       key={subcategory.id}
                       style={{ textDecoration: "none", display: "block" }}
-                      to={subcategory.path}
+                      to={`${subcategory.path}`}
                     >
                       <Typography
                         sx={{

@@ -15,33 +15,37 @@ export const menuRoutes = [
   },
   {
     id: "products",
-    path: "/category/:categoryName",
-    Element: ProductListContainer ,
+    path: "/category/:category/:subcategory",
+    Element: ProductListContainer,
   },
   {
     id: "login",
     path: "/login",
-    Element: LoginContainer ,
-  },{
+    Element: LoginContainer,
+  },
+  {
     id: "register",
     path: "/register",
-    Element: RegisterContainer ,
+    Element: RegisterContainer,
   },
   {
     id: "Asesoramiento",
     path: "/Asesoramiento",
-    Element: Asesoramiento ,
-  },{
+    Element: Asesoramiento,
+  },
+  {
     id: "QuienesSomos",
     path: "/QuienesSomos",
-    Element: QuienesSomos ,
-  },{
+    Element: QuienesSomos,
+  },
+  {
     id: "checkOut",
     path: "/checkOut",
-    Element: CheckOut ,
-  },{
+    Element: CheckOut,
+  },
+  {
     id: "formularioDeEnvio",
     path: "/formularioDeEnvio",
-    Element: FormularioDeEnvio ,
+    Element: FormularioDeEnvio,
   },
 ];

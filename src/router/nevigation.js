@@ -104,12 +104,12 @@ export const menu = [
       {
         id: 52,
         title: "Cestos",
-        path: "/category/decoracion/Cestos",
+        path: "/category/decoracion/cestos",
       },
       {
         id: 53,
-        title: "Macetas ",
-        path: "/category/decoracion/macetas ",
+        title: "Macetas",
+        path: "/category/decoracion/macetas",
       },
       {
         id: 54,
@@ -135,7 +135,7 @@ export const menu = [
     subcategories: [
       {
         id: 61,
-        title: "100% yute",
+        title: "100%yute",
         path: "/category/alfombras/100%Yute",
       },
       {
@@ -154,17 +154,17 @@ export const menu = [
       {
         id: 71,
         title: "Iluminación",
-        path: "/category/iluminacion/Iluminación",
+        path: "/category/iluminacion/iluminación",
       },
       {
         id: 72,
         title: "Luminarias de techo",
-        path: "/category/iluminacion/Luminarias de techo",
+        path: "/category/iluminacion/luminariasDeTecho",
       },
       {
         id: 73,
         title: "Luminarias de mesa",
-        path: "/category/iluminacion/Luminariasde mesa ",
+        path: "/category/iluminacion/luminariasdeMesa ",
       },
       {
         id: 74,
