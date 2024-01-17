@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 const LoginExitoso = () => {
@@ -7,7 +8,11 @@ const LoginExitoso = () => {
       
           <Typography sx={{ mt:10, color:"#0FA24A", fontFamily:"Lora", fontSize:"35px", fontWeight:"400", lineHeight:"45px"}} >Inicio de sesión exitoso!</Typography>
           
-     
+          <Link to={"/dashboard"}>
+                  <Typography sx={{ color: "#006F6F", ml: 1 }}>
+                    Dashboard
+                  </Typography>
+                </Link>
 
    
         {/*  <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
