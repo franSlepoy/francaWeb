@@ -1,14 +1,16 @@
-import { Box } from "@mui/material"
+import { Box, Typography } from "@mui/material";
 
-
-
-const ProductDetail = () => {
-    
+const ProductDetail = ({ product }) => {
   return (
-    <Box>
-        
+    <Box  width={"80%"} margin={"auto"}>
+      <Typography mt={"100px"}>Nombre:{product.nombre}</Typography>
+      <Typography>Precio: {product.precio}</Typography>
+      <Typography>Descripción: {product.descripcion}</Typography>
+      
+      <img width={"50%"} src={product.imagen1} alt="" />
+      
     </Box>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;
