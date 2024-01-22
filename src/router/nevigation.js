@@ -31,7 +31,7 @@ export const menu = [
       {
         id: 22,
         title: "Aparadores",
-        path: "/category/mobiliario/Aparadores",
+        path: "/category/mobiliario/aparadores",
       },
       {
         id: 23,
