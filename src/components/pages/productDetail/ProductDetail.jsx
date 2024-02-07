@@ -1,4 +1,6 @@
 import { Box, Typography } from "@mui/material";
+import Counter from "../../common/counter/Counter";
+import CounterContainer from "../../common/counter/CounterContainer";
 
 const ProductDetail = ({ product }) => {
   return (
@@ -8,7 +10,7 @@ const ProductDetail = ({ product }) => {
       <Typography>Descripción: {product.descripcion}</Typography>
       
       <img width={"50%"} src={product.imagen1} alt="" />
-      
+      <CounterContainer/>
     </Box>
   );
 };
